@@ -1,0 +1,29 @@
+<nav class="navbar full-width navbar-expand-lg navbar-light bg-white">
+  <div class="nav-bar-container-main">
+    <div>
+      <img
+        src="https://gysconsulting.com.co/wp-content/uploads/2021/03/cropped-Logo-GyS-Consulting-1-120x56.jpg"
+      />
+    </div>
+  </div>
+</nav>
+<div class="login">
+  <form class="custom-form" method="post">
+    <h1>Inicio de sesión</h1>
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Nombre de usuario"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Contaseña"
+      required="required"
+    />
+    <button type="submit" (click)="login()">Iniciar Sesión</button>
+  </form>
+</div>

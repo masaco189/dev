@@ -1,0 +1,59 @@
+<nav class="navbar full-width navbar-expand-lg navbar-light bg-white">
+  <div class="nav-bar-container-main">
+    <div>
+      <button class="navbar-toggler" type="button" (click)="drawer.toggle()" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <img src="https://gysconsulting.com.co/wp-content/uploads/2021/03/cropped-Logo-GyS-Consulting-1-120x56.jpg">
+    </div>
+    <div>
+      <button (click)="goToLogin()" type="button" class="btn btn-success app-light-black-button device-round-black" >
+        <span class="close-session-text">Cerrar sesión</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!--sidebar-->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" [mode]="mode" [opened]="toggleMenuOpen">
+    <div class="side-options-container">
+
+      <div class="side-menu-option" [ngClass]="{ 'active-tab': this.activeOption === 'home' || this.activeOption === ''}"
+        (click)="goToView('', drawer)">
+        <p class="side-menu-text">Inicio</p>
+      </div>
+      <div class="side-menu-option" [ngClass]="{ 'active-tab': this.activeOption === 'profile' }"
+        (click)="goToView('profile', drawer)">
+        <p class="side-menu-text">Mi cuenta</p>
+      </div>
+    </div>
+
+    <div class="small-border-top">
+      <div class="title-container">
+        <p class="allies-title-side">Bienvenido</p>
+      </div>
+    </div>
+
+    <div class="small-border-top version-container">
+      <span *ngIf="version">{{version}}</span>
+    </div>
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+
+    <div class="card-shadow-container">
+      <div
+        _ngcontent-hic-c112=""
+        class="card-shadow-container basics-container features-container"
+      >
+      <router-outlet></router-outlet>
+        <br><br><br><br><br><br><br><br><br><br>
+      </div>
+    </div>
+
+  </div>
+</mat-drawer-container>
+

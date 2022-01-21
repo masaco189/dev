@@ -1,0 +1,71 @@
+.app-light-black-button {
+  border-radius: 2em !important;
+  background-color: #606060 !important;
+  border: 0 !important;
+  width: 120px !important;
+  font-size: 13px !important;
+  margin-left: -20px !important;
+}
+.mat-stepper-horizontal {
+  margin-top: 2%;
+}
+.mat-form-field {
+  margin-top: 2%;
+}
+.basics-container {
+  flex: 2;
+  display: flex;
+  justify-content: space-evenly;
+}
+.reports-body {
+  padding: 1em;
+  background-color: white;
+}
+
+.badges-container {
+  display: block !important;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.report-badge {
+  display: flex;
+  border-radius: 0.3em;
+  margin-top: 1em;
+  box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.3);
+  height: 100px;
+  width: 300px;
+}
+
+.half-screen {
+  width: 50%;
+}
+
+.informative-select {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em 15em;
+  margin-top: 5em;
+}
+
+.small-margin-bottom {
+  margin-bottom: 1em;
+}
+
+.filler-whitespace {
+  height: 10em;
+}
+
+.no-account-icon {
+  height: 4em;
+  margin-bottom: 1em;
+  filter: opacity(0.6);
+}
+
+.informative-select > p {
+  font-size: 20pt;
+  font-family: Nunito, sans-serif;
+  text-align: center;
+  color: #606060;
+}

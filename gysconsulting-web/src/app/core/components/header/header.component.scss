@@ -1,0 +1,112 @@
+#options-nav .nav > li > div {
+  display: inline-block;
+}
+.navbar {
+  height: 100px !important;
+}
+
+.superior-header {
+  background-color: #1582c1;
+  width: 100%;
+  height: 30px;
+}
+
+.flex-container {
+  display: flex;
+}
+.hide-on-big {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.item-for-small,
+.item-for-smallest {
+  display: none;
+}
+
+.nav-anchor-li {
+  font-size: 12pt;
+  color: #000099;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  font-weight: 500;
+  font-family: Nunito-bold, sans-serif;
+  cursor: pointer;
+}
+
+.register-button {
+  width: 8em;
+  margin-left: 1em;
+  font-size: 12pt;
+  font-family: Nunito-bold, sans-serif;
+}
+
+.full-width {
+  min-width: 100vw !important;
+  height: 70px;
+}
+
+// Tarifas
+
+.bold {
+  font-family: Nunito-bold, sans-serif;
+}
+
+.dropdown-a {
+  font-size: 14pt;
+  margin-bottom: 0.5em;
+}
+
+// Responsiveness
+
+@media (max-width: 1100px) {
+  .nav-anchor-li {
+    font-size: 11pt;
+  }
+
+  .dropdown-a {
+    font-size: 14pt;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 991px) {
+  .hide-on-big {
+    display: none;
+  }
+}
+
+.maxgpay-navbar-image {
+  width: 11em;
+}
+
+@media (max-width: 650px) {
+  .item-for-small {
+    display: block;
+  }
+}
+
+@media (max-width: 550px) {
+}
+
+@media (max-width: 430px) {
+  .login-icon-container {
+    display: none;
+  }
+  .item-for-smallest {
+    display: block;
+  }
+
+  .navbar-toggler-icon {
+    width: 1.3em;
+    height: 1.3em;
+  }
+
+  .nav-bar-container {
+    margin-left: 0.5em;
+  }
+  .maxgpay-navbar-image {
+    height: 4.5em;
+    margin-right: 1em;
+  }
+}

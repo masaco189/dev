@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "gys-consulting": {
+      "hosting": {
+        "web-gysconsulting": [
+          "gys-consulting"
+        ]
+      }
+    },
+    "gys-consulting-9acef": {
+      "hosting": {
+        "web-gysconsulting": [
+          "gys-consulting-9acef"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gys-consulting-9acef"
+  }
+}

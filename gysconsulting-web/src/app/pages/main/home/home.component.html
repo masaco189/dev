@@ -1,0 +1,219 @@
+<div>
+  <div class="md-margin-top">
+    <p class="sub-view-title">Inventario</p>
+  </div>
+  <div class="badges-container">
+    <mat-horizontal-stepper [linear]="isLinear">
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Paso</ng-template>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Nombre del activo</mat-label>
+            <input
+              [(ngModel)]="datos[0].activeName"
+              matInput
+              formControlName="nameCtrl"
+              placeholder="Nombre del activo"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Número de placa</mat-label>
+            <input
+              [(ngModel)]="datos[0].plateNumber"
+              matInput
+              formControlName="placaCtrl"
+              placeholder="Nombre del activo"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Estado del activo</mat-label>
+            <mat-select
+              formControlName="estadoCtrl"
+              [(ngModel)]="datos[0].activeState"
+            >
+              <mat-option value="bueno">Bueno</mat-option>
+              <mat-option value="regular">Regular</mat-option>
+              <mat-option value="inservible">Inservible</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Cantidad de activos</mat-label>
+            <input
+              [(ngModel)]="datos[0].activeQuantity"
+              matInput
+              formControlName="cantidadCtrl"
+              placeholder="Cantidad de activos"
+              required
+            />
+          </mat-form-field>
+          <div>
+            <mat-grid-list cols="2" rowHeight="50px">
+              <mat-grid-tile> </mat-grid-tile>
+              <mat-grid-tile>
+                <button
+                  (click)="primerPaso()"
+                  mat-button
+                  matStepperNext
+                  style="
+                    background-color: #077bc0;
+                    color: white;
+                    border-radius: 10px;
+                  "
+                >
+                  Siguiente
+                </button>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Paso</ng-template>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Funcionario responsable del activo</mat-label>
+            <input
+              [(ngModel)]="datos[0].functionaryName"
+              matInput
+              formControlName="funcionarioCtrl"
+              placeholder="Funcionario responsable del activo"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Cedula del funcionario responsable</mat-label>
+            <input
+              [(ngModel)]="datos[0].functionaryIdentification"
+              matInput
+              formControlName="cedulaCtrl"
+              placeholder="Funcionario responsable del activo"
+              required
+            />
+          </mat-form-field>
+          <mat-label>Firma del funcionario responsable</mat-label>
+          <signature-pad
+            [options]="signaturePadOptions"
+            (onEndEvent)="drawComplete()"
+            style="border-style: none none solid none; height: 100%"
+          ></signature-pad>
+          <div style="padding-top: 5%">
+            <button mat-button (click)="clear()" style="border-radius: 10px">
+              Borrar
+            </button>
+          </div>
+          <div>
+            <mat-grid-list cols="2" rowHeight="2:1">
+              <mat-grid-tile>
+                <button
+                  mat-button
+                  matStepperPrevious
+                  style="border-radius: 10px"
+                >
+                  Atrás
+                </button>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <button
+                  (click)="segundoPaso()"
+                  mat-button
+                  matStepperNext
+                  style="
+                    background-color: #077bc0;
+                    color: white;
+                    border-radius: 10px;
+                  "
+                >
+                  Siguiente
+                </button>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Paso</ng-template>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Referencia del activo</mat-label>
+            <input
+              [(ngModel)]="datos[0].activeReference"
+              matInput
+              formControlName="referenciaCtrl"
+              placeholder="Referencia del activo"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Número serial del activo</mat-label>
+            <input
+              [(ngModel)]="datos[0].activeSerial"
+              matInput
+              formControlName="serialCtrl"
+              placeholder="Número serial del activo"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Localización del activo</mat-label>
+            <input
+              [(ngModel)]="datos[0].activeLocation"
+              matInput
+              formControlName="localizacionCtrl"
+              placeholder="Localización del activo"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Otro</mat-label>
+            <input
+              [(ngModel)]="datos[0].other"
+              matInput
+              formControlName="otroCtrl"
+              placeholder="Otro"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="display: block">
+            <mat-label>Foto</mat-label>
+            <ngx-mat-file-input
+              [(ngModel)]="datos[0].photo"
+              matInput
+              formControlName="fotoCtrl"
+              required
+            >
+            </ngx-mat-file-input>
+            <!--<input
+            matInput
+            formControlName="fotoCtrl"
+            placeholder="Foto"
+            required
+          />-->
+          </mat-form-field>
+          <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile>
+              <button mat-button matStepperPrevious style="border-radius: 10px">
+                Atrás
+              </button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <button
+                (click)="guardarPaso(this.datos[0])"
+                mat-button
+                matStepperNext
+                style="
+                  background-color: #077bc0;
+                  color: white;
+                  border-radius: 10px;
+                "
+              >
+                Guardar
+              </button>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>
